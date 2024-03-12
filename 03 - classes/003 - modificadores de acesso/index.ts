@@ -11,8 +11,11 @@
 // ( public ( protect ( private ) ) )
 
 class Pessoa {
-  private nome: string = "";
-  private idade: number = 0;
+  public nome: string = "";
+  public idade: number = 0;
+
+  // underline antes da variável, significa ser um atributo privado.
+  private _programador: string = "programador";
 
   constructor(nome: string, idade: number) {
     this.nome = nome;
@@ -23,7 +26,7 @@ class Pessoa {
     return `O ${this.nome} comeu ${comida}`;
   }
 
-  protected fezAniversario() {
+  public fezAniversario() {
     return `O ${this.nome} fez tantos anos ${++this.idade}`;
   }
 }

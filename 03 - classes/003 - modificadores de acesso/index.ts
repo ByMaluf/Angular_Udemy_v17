@@ -11,11 +11,8 @@
 // ( public ( protect ( private ) ) )
 
 class Pessoa {
-  public nome: string = "";
-  public idade: number = 0;
-
-  // underline antes da variável, significa ser um atributo privado.
-  private _programador: string = "programador";
+  protected nome: string = "";
+  protected idade: number = 0;
 
   constructor(nome: string, idade: number) {
     this.nome = nome;
@@ -31,5 +28,19 @@ class Pessoa {
   }
 }
 
-const pessoa1 = new Pessoa("Brenno", 25);
-console.log(pessoa1.comer("Sobá"));
+class Brenno extends Pessoa {
+  private profissao: string = "Desenvolvedor de Sistemas";
+
+  constructor() {
+    super("Brenno", 25);
+  }
+
+  public getProfissao() {
+    return `${this.nome} trabalha como ${this.profissao} no Ministério Público`;
+  }
+}
+
+const brenno = new Brenno();
+
+console.log(brenno.comer("sobá"));
+console.log(brenno.getProfissao());

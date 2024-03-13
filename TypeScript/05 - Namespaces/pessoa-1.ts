@@ -15,3 +15,8 @@ export namespace Pessoa1 {
 
 console.log(Pessoa1.nome);
 console.log(Pessoa1.calc());
+
+import { Pessoa } from "./namespace-aninhados";
+
+console.log(`Nome exportado externo: ${Pessoa.Joao.nome}`);
+console.log(`Nome exportado externo: ${Pessoa.Maria.nome}`);
